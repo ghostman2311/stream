@@ -28,3 +28,42 @@
 7. How to process data in chunks
    1. ![alt text](image-6.png)
    2. ![alt text](image-7.png)
+
+## Streams
+
+1. Change the script
+   ![alt text](image-8.png)
+
+2. Read the file and see what happen
+   ![alt text](image-9.png)
+
+3. Consuming data example
+   ![alt text](image-10.png)
+
+4. Consuming all data example
+   ![alt text](image-11.png)
+
+5. Create stream type.mjs file(18.28)
+
+   1. ![alt text](image-12.png)
+   2. Usually we don't create readable from scratch
+
+6. Transforming readable stream from one form to another
+   ![alt text](image-13.png)
+   ![alt text](image-14.png)
+
+## Duplex
+
+1. Basic example using duplex
+   ![alt text](image-15.png)
+   ![alt text](image-16.png)
+
+2. Implementing read function in above duplex
+   ![alt text](image-17.png)
+   ![alt text](image-18.png)
+
+3. create duplex-broadcast.mjs
+   ![alt text](image-19.png)
+   ![alt text](image-20.png)
+   ![alt text](image-21.png)
+   ![alt text](image-22.png)
