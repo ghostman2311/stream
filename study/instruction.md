@@ -67,3 +67,42 @@
    ![alt text](image-20.png)
    ![alt text](image-21.png)
    ![alt text](image-22.png)
+
+# 20 June
+
+## Chat app
+
+1. Create server.mjs and client.mjs.
+2. Create server.mjs like this
+   1. ![alt text](image-23.png)
+   2. ![alt text](image-24.png)
+   3. ![alt text](image-25.png)
+3. How it is different from app.listen in express js
+
+   1. ![alt text](image-26.png)
+   2. ![alt text](image-27.png)
+
+4. What is difference between http server and tcp server?
+
+   1. ![alt text](image-28.png)
+   2. ![alt text](image-29.png)
+
+5. Add this code in client.mjs
+
+   1. ![alt text](image-30.png)
+
+6. Add this code on server
+   1. ![alt text](image-31.png)
+   2. We are just assigning id to client and store it in map.
+   3. Whenever client closes the connection we removed it from map.
+7. Create log function like this on client
+   ![alt text](image-32.png)
+
+8. Create Writable stream in client like this
+   ![alt text](image-33.png)
+
+9. Create streamBroadcaster and notifySubscriber function
+   ![alt text](image-34.png)
+
+10. On frontend just use passthrough like this
+    ![alt text](image-35.png)
