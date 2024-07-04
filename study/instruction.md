@@ -106,3 +106,18 @@
 
 10. On frontend just use passthrough like this
     ![alt text](image-35.png)
+
+# 4 July
+
+## Pipe vs pipeline
+
+1. Create big file
+   // node -e "process.stdout.write('hello world'.repeat(1e7))" > big.file
+
+2. Create server and read the big file like this
+   ![alt text](image-36.png)
+
+3. run the server and send curl request `curl localhost:3000`
+4. Using pipe we can consume parital data.
+5. This is the example using pipeline
+   ![alt text](image-37.png)
