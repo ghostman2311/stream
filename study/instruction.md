@@ -232,3 +232,20 @@ process.stdin.on("readable", () => {
   }
 });
 ```
+
+# 12 July
+
+## Project csv to ndjson
+
+1. Create stream component folder
+2. create csvtondjson.js inside it.
+3. Write this code
+   ![alt text](image-40.png)
+   ![alt text](image-41.png)
+
+4. Creat test/streamComponents/csvtondjson.test.js
+5. Create test todo like this
+   ![alt text](image-42.png)
+
+6. Configure the first todo like this
+   ![alt text](image-43.png)
