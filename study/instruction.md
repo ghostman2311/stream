@@ -121,3 +121,114 @@
 4. Using pipe we can consume parital data.
 5. This is the example using pipeline
    ![alt text](image-37.png)
+
+# 5 July
+
+1. Write new code like this
+   ![alt text](image-38.png)
+   ![alt text](image-39.png)
+
+## Project csv to ndjson
+
+1. setup package.json.
+2. install jest@29.2
+
+# 11 July
+
+## Understanding streams from book
+
+### Readable stream
+
+There are two approaches to receive the data from a Readable stream: non-flowing
+(or paused) and flowing
+
+### Non flowing mode
+
+1. Non-flowing (paused) mode:
+
+- This is the default mode for reading data from a readable stream.
+- It means that data is not automatically flowing; you have to ask for it.
+
+2. Attaching a listener:
+
+- You need to add a listener for the readable event.
+- This event tells you when there is new data to read.
+
+3. Reading data:
+
+- Once the readable event triggers, you can start reading data.
+- You use a loop to keep reading data until there is no more left.
+
+4. Using the read method:
+
+- The read method reads data from the internal buffer.
+- It returns a Buffer object, which is a chunk of data.
+- The read method can take an optional size parameter, which specifies how much data to read.
+
+5. Imperatively pulling data:
+
+- In this mode, you pull (request) data when you need it, rather than having it pushed to you automatically.
+
+6. Example
+
+```
+const fs = require('fs');
+
+// Create a readable stream from a file
+const readable = fs.createReadStream('example.txt');
+
+// Listen for the 'readable' event
+readable.on('readable', () => {
+let chunk;
+// Read data from the stream in a loop until it's empty
+while (null !== (chunk = readable.read())) {
+console.log(`Received ${chunk.length} bytes of data.`);
+console.log(chunk.toString());
+}
+});
+
+// Handle the end of the stream
+readable.on('end', () => {
+console.log('No more data to read.');
+});
+```
+
+7. Explanation of example
+
+- Create a readable stream:
+  - We create a readable stream from a file named example.txt.
+- Attach a listener for the readable event:
+  - We add a listener for the readable event. This tells us when there is data available to read.
+- Read data in a loop:
+  - Inside the readable event listener, we use a while loop to keep reading data using readable.read().
+  - The loop continues until readable.read() returns null, meaning there's no more data to read.
+- Log the received data:
+  - We log the size of the data chunk and its content.
+- Handle the end of the stream:
+  - We add a listener for the end event to know when there is no more data to read.
+
+8. Flowing mode example
+
+```
+process.stdin
+  .on("data", (chunk) => {
+    console.log("New Data available");
+    console.log(`Chunk read (${chunk.length} bytes): ${chunk.toString()} `);
+  })
+  .on("end", () => {
+    console.log("End of stream");
+  });
+
+```
+
+9. Non-flowing mode example
+
+```
+process.stdin.on("readable", () => {
+  let chunk;
+  console.log("New Data available");
+  while ((chunk = process.stdin.read()) !== null) {
+    console.log(`Chunk read (${chunk.length} bytes): ${chunk.toString()} `);
+  }
+});
+```
