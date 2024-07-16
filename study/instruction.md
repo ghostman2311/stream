@@ -249,3 +249,15 @@ process.stdin.on("readable", () => {
 
 6. Configure the first todo like this
    ![alt text](image-43.png)
+
+# 13 July
+
+## Project csv to ndjson(continued)
+
+1. Update the test like this
+   ![alt text](image-44.png)
+
+2. Update the NdJson class like this
+   ![alt text](image-45.png)
+
+3. Just update the generator function code and final function code using author repo
